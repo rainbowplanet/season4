@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界观介绍 - 七色国纪</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="world-view">
+
+    <div class="menu-container">
+        <div class="menu-icon" id="menuIcon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="world-view.html" class="menu-item">世界观介绍</a>
+            <a href="prologue.html" class="menu-item">序·别来无恙</a>
+            <a href="chapter1.html" class="menu-item">第一章·时过境迁</a>
+            <a href="chapter2.html" class="menu-item">第二章·色争于野</a>
+            <a href="chapter3.html" class="menu-item">第三章·染尽诸彩</a>
+            <a href="last.html" class="menu-item">结局</a>
+        </div>
+    </div>
+
+    <div class="title">
+        <img src="title.png" alt="七色国纪" class="title-image">
+    </div>
+
+    <div class="prologue-title">序　言</div>
+
+    <div class="prologue-banner">
+        <div class="prologue-text">
+            <p>　　　　　　　　　　　　亲爱的，让我们说一个老生常谈的故事好吗？</p>
+            <p>在浩瀚的宇宙中，有这样一颗名为彩虹星的星球。根茎、昆虫、菌类穿梭于土壤之中，未命名的元素在空气中涌动，风不息，水奔流，当第一道闪电劈下，点燃枯枝，从此世间便有了火......这就是组成世界的一切，而后枯荣生死，日月往复。</p>
+            <p>丰富的资源孕育了无数生命，魔力浓度的差异造就了各色环境，截然不同的文明随之诞生，王朝几度兴衰，权力数次易主。</p>
+            <p>巴别塔不存在的世界里，人们生而不同，注定要分裂、要流血、要掠夺——后来，大家将其称之为，战争。</p>
+            <p>这是命运最为钟爱的剧目，不断将所有人推向那必然的舞台，时至今日，亦如往日......</p>     
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button class="info-button" id="planBtn">企划简介</button>
+        <button class="info-button" id="campBtn">阵营介绍</button>
+    </div>
+
+    <div class="main-content">
+        <div class="map-container">
+            <svg id="map" viewBox="0 0 2682 1688">
+            </svg>
+            <div class="underground-emblem" id="undergroundEmblem">
+                <div class="emblem-icon">
+                    <img src="icons/blue.png" alt="蓝国">
+                </div>
+                <div class="emblem-name">*蓝国领土位于魔界，点击国徽查看相关信息</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="image-popup" id="imagePopup">
+        <div class="popup-content">
+            <button class="popup-close" id="popupClose">×</button>
+            <img id="popupImage" src="" alt="国家图片">
+            <p id="popupCaption"></p>
+        </div>
+    </div>
+
+    <div class="image-popup" id="battlePopup">
+        <div class="popup-content battle-popup-content">
+            <button class="popup-close" id="battlePopupClose">×</button>
+            <div class="image-viewer" id="imageViewer">
+                <div class="image-viewer-wrapper">
+                    <img id="battlePopupImage" src="" alt="图片" class="viewer-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 世界观按钮专用图片弹窗 -->
+    <div class="image-popup" id="infoPopup">
+        <div class="popup-content info-popup-content">
+            <button class="popup-close" id="infoPopupClose">×</button>
+            <div class="info-image-viewer">
+                <img id="infoPopupImage" src="" alt="图片">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // 汉堡菜单
+        const menuIcon = document.getElementById('menuIcon');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        if (menuIcon && dropdownMenu) {
+            menuIcon.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdownMenu.classList.toggle('show');
+            });
+            document.addEventListener('click', () => dropdownMenu.classList.remove('show'));
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.addEventListener('click', () => dropdownMenu.classList.remove('show'));
+            });
+        }
+
+        // 蓝国国徽
+        const undergroundEmblem = document.getElementById('undergroundEmblem');
+        if (undergroundEmblem) {
+            undergroundEmblem.addEventListener('click', () => {
+                const popup = document.getElementById('imagePopup');
+                const popupImage = document.getElementById('popupImage');
+                const popupCaption = document.getElementById('popupCaption');
+                const title = document.querySelector('.title');
+                const battleSection = document.querySelector('.battle-section');
+                if (title) title.style.visibility = 'hidden';
+                if (battleSection) battleSection.style.visibility = 'hidden';
+                popupImage.src = 'images/blue.png';
+                popupCaption.textContent = '蓝国';
+                popup.classList.add('show');
+            });
+        }
+
+        // 图片弹窗关闭
+        const popup = document.getElementById('imagePopup');
+        const popupClose = document.getElementById('popupClose');
+        if (popupClose) {
+            popupClose.addEventListener('click', () => {
+                popup.classList.remove('show');
+                const title = document.querySelector('.title');
+                const battleSection = document.querySelector('.battle-section');
+                if (title) title.style.visibility = 'visible';
+                if (battleSection) battleSection.style.visibility = 'visible';
+            });
+        }
+        if (popup) {
+            popup.addEventListener('click', (e) => {
+                if (e.target === popup) {
+                    popup.classList.remove('show');
+                    const title = document.querySelector('.title');
+                    const battleSection = document.querySelector('.battle-section');
+                    if (title) title.style.visibility = 'visible';
+                    if (battleSection) battleSection.style.visibility = 'visible';
+                }
+            });
+        }
+
+        // 世界观按钮专用弹窗
+        const planBtn = document.getElementById('planBtn');
+        const campBtn = document.getElementById('campBtn');
+        const infoPopup = document.getElementById('infoPopup');
+        const infoPopupImage = document.getElementById('infoPopupImage');
+        const infoPopupClose = document.getElementById('infoPopupClose');
+        const title = document.querySelector('.title');
+        const battleSection = document.querySelector('.battle-section');
+
+        function showInfoPopup(imgSrc) {
+            if (title) title.style.visibility = 'hidden';
+            if (battleSection) battleSection.style.visibility = 'hidden';
+            infoPopupImage.src = imgSrc;
+            infoPopup.classList.add('show');
+        }
+
+        function closeInfoPopup() {
+            infoPopup.classList.remove('show');
+            if (title) title.style.visibility = 'visible';
+            if (battleSection) battleSection.style.visibility = 'visible';
+        }
+
+        if (planBtn) {
+            planBtn.addEventListener('click', () => {
+                showInfoPopup('images/plan.png');
+            });
+        }
+
+        if (campBtn) {
+            campBtn.addEventListener('click', () => {
+                showInfoPopup('images/camp.png');
+            });
+        }
+
+        if (infoPopupClose) {
+            infoPopupClose.addEventListener('click', closeInfoPopup);
+        }
+
+        if (infoPopup) {
+            infoPopup.addEventListener('click', (e) => {
+                if (e.target === infoPopup) closeInfoPopup();
+            });
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (infoPopup && infoPopup.classList.contains('show')) closeInfoPopup();
+                if (popup && popup.classList.contains('show')) {
+                    popup.classList.remove('show');
+                    if (title) title.style.visibility = 'visible';
+                    if (battleSection) battleSection.style.visibility = 'visible';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

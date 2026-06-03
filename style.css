@@ -41,7 +41,6 @@ body::before {
     z-index: 1000;
 }
 
-/* 三条横杠图标 */
 .menu-icon {
     width: 35px;
     height: 35px;
@@ -65,13 +64,11 @@ body::before {
     transition: all 0.3s ease;
 }
 
-/* 悬停效果 */
 .menu-icon:hover {
     background: rgba(0, 0, 0, 0.8);
     transform: scale(1.05);
 }
 
-/* 下拉菜单 - 半透明黑色 + 小圆角 */
 .dropdown-menu {
     position: absolute;
     top: 45px;
@@ -88,12 +85,10 @@ body::before {
     z-index: 1001;
 }
 
-/* 显示菜单 */
 .dropdown-menu.show {
     display: flex;
 }
 
-/* 菜单项 */
 .menu-item {
     padding: 12px 18px;
     color: white;
@@ -134,7 +129,6 @@ body::before {
     z-index: 2;
 }
 
-/* 战场标题 - 深灰色大字号 */
 .battle-title {
     color: #E7E7E7;
     font-size: 2.2rem;
@@ -161,7 +155,6 @@ body::before {
     flex: 1;
     background: #2a2a2a;
     backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
     border: 2px solid rgba(200, 200, 200, 0.4);
     border-radius: 12px;
     padding: 12px 12px;
@@ -173,7 +166,6 @@ body::before {
     min-height: 80px;
 }
 
-/* 悬停效果 - 窄版柔和斜向七彩外发光 */
 .battle-card:hover {
     transform: translateY(-3px);
     border-color: rgba(220, 220, 220, 0.6);
@@ -190,12 +182,10 @@ body::before {
     z-index: 100;
 }
 
-/* 点击效果 */
 .battle-card:active {
     transform: translateY(0);
 }
 
-/* 战场名称 */
 .battle-name {
     font-size: 1.2rem;
     font-weight: bold;
@@ -204,7 +194,6 @@ body::before {
     text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
 }
 
-/* 参战国家 */
 .battle-countries {
     font-size: 0.95rem;
     margin-bottom: 0;
@@ -224,12 +213,11 @@ body::before {
     z-index: 1;
 }
 
-/* 地图容器 - 毛玻璃效果 + 灰色实线边框 */
+/* 地图容器 */
 .map-container {
     flex: 1;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     border: 2px solid #d0d0d0;
     border-radius: 20px;
     padding: 25px;
@@ -242,7 +230,6 @@ body::before {
     overflow-x: auto;
 }
 
-/* 地图容器背景图片层 */
 .map-container::before {
     content: '';
     position: absolute;
@@ -281,20 +268,11 @@ body::before {
     transform: translateY(-10px);
 }
 
-/* 图标组样式 - 确保不阻挡点击 */
 .country-icon-group {
     pointer-events: none;
 }
 
-.country-icon-group circle {
-    pointer-events: none;
-}
-
-.country-icon-group image {
-    pointer-events: none;
-}
-
-/* ===== 图片弹窗样式（最上层） ===== */
+/* ===== 图片弹窗样式 ===== */
 .image-popup {
     position: fixed;
     top: 0;
@@ -313,7 +291,6 @@ body::before {
     display: flex;
 }
 
-/* 弹窗内容 - 无背景框，无边框 */
 .popup-content {
     position: relative;
     max-width: 90%;
@@ -346,7 +323,6 @@ body::before {
     transform: scale(1.1);
 }
 
-/* 通用弹窗图片样式 */
 .popup-content img {
     max-width: 90vw;
     max-height: 80vh;
@@ -367,16 +343,14 @@ body::before {
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-/* 普通国家弹窗 - 有关闭按钮 */
 #imagePopup .popup-close {
     display: flex;
 }
 
-/* ===== 战场弹窗样式（支持缩放和拖动） ===== */
-/* 战场弹窗内容容器 */
+/* ===== 战场弹窗样式 ===== */
 .battle-popup-content {
-    width: 860px;          /* 固定宽度（800px图片 + 内边距空间） */
-    max-width: 90vw;       /* 小屏幕时自适应 */
+    width: 860px;
+    max-width: 90vw;
     height: 85vh;
     max-height: 85vh;
     padding: 0;
@@ -387,31 +361,28 @@ body::before {
     flex-direction: column;
 }
 
-/* 图片查看器容器 - 改用纵向滚动 */
 .image-viewer {
     width: 100%;
-    height: calc(100% - 10px);  /* 留出关闭按钮空间 */
-    overflow-y: auto;           /* 改为纵向滚动 */
-    overflow-x: auto;           /* 保留横向滚动以防万一 */
-    cursor: default;            /* 不再需要抓取光标 */
+    height: calc(100% - 10px);
+    overflow-y: auto;
+    overflow-x: auto;
+    cursor: default;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     position: relative;
     scroll-behavior: smooth;
 }
 
-/* 可缩放的图片 - 固定宽度，高度自适应 */
 .viewer-image {
     display: block;
     width: 100%;
-    max-width: 800px;           /* 固定最大宽度800px */
+    max-width: 800px;
     height: auto;
-    margin: 0 auto;             /* 居中显示 */
-    pointer-events: none;       /* 允许点击穿透到滚动条 */
+    margin: 0 auto;
+    pointer-events: none;
     border-radius: 8px;
 }
 
-/* 图片外层包装器 - 控制滚动区域的滚动行为 */
 .image-viewer-wrapper {
     display: flex;
     justify-content: center;
@@ -420,7 +391,6 @@ body::before {
     padding: 20px;
 }
 
-/* 战场弹窗关闭按钮位置调整 */
 #battlePopup .popup-close {
     position: absolute;
     top: 10px;
@@ -435,7 +405,6 @@ body::before {
     transform: scale(1.1);
 }
 
-/* 自定义滚动条样式 - 更美观 */
 .image-viewer::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -455,7 +424,7 @@ body::before {
     background: rgba(255, 255, 255, 0.8);
 }
 
-/* ===== 蓝国国徽按钮（文字和图标分离，悬停只放大图标） ===== */
+/* ===== 蓝国国徽按钮 ===== */
 .underground-emblem {
     position: absolute;
     bottom: 10px;
@@ -470,7 +439,6 @@ body::before {
     gap: 0px;
 }
 
-/* 图标容器 - 独立控制 */
 .emblem-icon {
     width: 150px;
     height: 150px;
@@ -483,7 +451,6 @@ body::before {
     object-fit: contain;
 }
 
-/* 文字容器 - 独立且不参与动画 */
 .emblem-name {
     color: white;
     font-size: 12px;
@@ -495,135 +462,103 @@ body::before {
     transition: none;
 }
 
-/* 悬停效果 - 只作用于图标容器，文字不变 */
 .underground-emblem:hover .emblem-icon {
     transform: scale(1.05);
     filter: drop-shadow(0 0 10px rgba(0, 160, 255, 0.8));
 }
 
-/* 悬停时文字保持不变 */
 .underground-emblem:hover .emblem-name {
     transform: none;
     filter: none;
 }
 
 /* ===== 响应式设计 ===== */
-
-/* 平板设备 */
 @media (max-width: 1024px) {
     .main-content {
         flex-direction: column;
         gap: 20px;
     }
-    
     .map-container {
         min-height: 500px;
         padding: 20px;
     }
-    
     .battle-container {
         gap: 15px;
     }
-    
     .battle-title {
         font-size: 1.8rem;
     }
-    
     .battle-card {
         padding: 10px 12px;
     }
-    
     .battle-name {
         font-size: 1.1rem;
     }
-    
     .battle-countries {
         font-size: 0.9rem;
     }
-    
-    /* 平板战场弹窗 */
     .battle-popup-content {
         width: 95vw;
         height: 80vh;
     }
 }
 
-/* 手机设备 */
 @media (max-width: 768px) {
     body {
         padding: 10px;
     }
-    
     .menu-container {
         top: 10px;
         right: 10px;
     }
-    
     .menu-icon {
         width: 30px;
         height: 30px;
         gap: 5px;
     }
-    
     .menu-icon span {
         width: 20px;
     }
-    
     .dropdown-menu {
         min-width: 140px;
     }
-    
     .menu-item {
         padding: 10px 16px;
         font-size: 0.9rem;
     }
-    
     .title-image {
         max-width: 85%;
         margin: 30px auto 5px;
     }
-    
     .battle-section {
         margin: 0 auto 8px auto;
     }
-    
     .battle-title {
         font-size: 1.5rem;
         margin-bottom: 8px;
     }
-    
     .battle-container {
         flex-direction: column;
         gap: 12px;
     }
-    
     .battle-card {
         min-height: 70px;
         padding: 10px;
     }
-    
-    .battle-card:hover {
-        transform: translateY(-2px);
-    }
-    
     .battle-name {
         font-size: 1rem;
     }
-    
     .battle-countries {
         font-size: 0.85rem;
     }
-    
     .map-container {
         min-height: 400px;
         padding: 15px;
     }
-    
     .popup-content {
         max-width: 95%;
         padding: 15px;
     }
-    
     .popup-close {
         top: -10px;
         right: -10px;
@@ -631,18 +566,14 @@ body::before {
         height: 30px;
         font-size: 20px;
     }
-    
     .popup-content img {
         max-width: 95vw;
         max-height: 70vh;
     }
-    
-    /* 手机战场弹窗 */
     .battle-popup-content {
         width: 98vw;
         height: 75vh;
     }
-    
     #battlePopup .popup-close {
         top: 5px;
         right: 5px;
@@ -650,22 +581,18 @@ body::before {
         height: 28px;
         font-size: 18px;
     }
-    
     #popupCaption {
         font-size: 1rem;
     }
-    
     .underground-emblem {
         bottom: 5px;
         right: 10px;
         gap: 3px;
     }
-    
     .emblem-icon {
         width: 35px;
         height: 35px;
     }
-    
     .emblem-name {
         font-size: 10px;
         max-width: 100px;
@@ -673,47 +600,174 @@ body::before {
     }
 }
 
-/* 小手机设备 */
 @media (max-width: 480px) {
     body {
         padding: 8px;
     }
-    
     .title-image {
         margin: 25px auto 5px;
     }
-    
     .battle-title {
         font-size: 1.3rem;
         margin-bottom: 6px;
     }
-    
     .battle-card {
         padding: 8px;
         min-height: 60px;
     }
-    
     .battle-name {
         font-size: 0.95rem;
     }
-    
     .battle-countries {
         font-size: 0.8rem;
     }
-    
     .map-container {
         min-height: 350px;
         padding: 10px;
     }
-    
     .popup-content img {
         max-width: 98vw;
         max-height: 60vh;
     }
-    
-    /* 小手机战场弹窗 */
     .battle-popup-content {
         width: 100vw;
         height: 70vh;
     }
+}
+
+/* ===== 世界观介绍页面专用样式 ===== */
+.world-view .main-content {
+    display: block;
+    max-height: none;
+}
+
+.world-view .map-container {
+    min-height: auto;
+    max-height: none;
+    overflow-y: visible;
+}
+
+.world-view .prologue-title {
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-size: 4rem;
+    font-weight: bold;
+    color: #F1F1F1;
+    margin: 30px 0 15px 0;
+    font-family: 'STSong', '华文宋体', 'SimSun', '宋体', serif;
+}
+
+.world-view .prologue-banner {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 80px 0;
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.world-view .prologue-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #f0f0f0;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.world-view .prologue-text p {
+    margin-bottom: 1em;
+    text-indent: 2em; 
+}
+
+.world-view .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin: 40px 0 40px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.world-view .info-button {
+    padding: 16px 48px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #363636;
+    background: rgba(200, 200, 200, 0.5);
+    backdrop-filter: blur(8px);
+    border: 2px solid #E0E0E0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    letter-spacing: 4px;
+}
+
+.world-view .info-button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    border-color: #BA4A73;
+    color: #E0E0E0;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.world-view .info-button:active {
+    transform: scale(0.98);
+}
+
+/* ===== 世界观按钮专用弹窗样式 ===== */
+.info-popup-content {
+    width: auto;
+    max-width: 90vw;
+    max-height: 90vh;
+    padding: 0;
+    background: transparent;
+    overflow: hidden;
+}
+
+.info-image-viewer {
+    width: 100%;
+    height: 80vh;
+    overflow-y: auto;
+    overflow-x: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.info-image-viewer img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: none;
+    max-height: none;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+#infoPopup .popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+}
+
+#infoPopup .popup-close:hover {
+    background: #ff4444;
+    transform: scale(1.1);
 }
