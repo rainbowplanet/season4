@@ -88,20 +88,8 @@
     </div>
 
     <script src="script.js"></script>
-    <script>
-        // 汉堡菜单
-        const menuIcon = document.getElementById('menuIcon');
-        const dropdownMenu = document.getElementById('dropdownMenu');
-        if (menuIcon && dropdownMenu) {
-            menuIcon.addEventListener('click', (e) => {
-                e.stopPropagation();
-                dropdownMenu.classList.toggle('show');
-            });
-            document.addEventListener('click', () => dropdownMenu.classList.remove('show'));
-            document.querySelectorAll('.menu-item').forEach(item => {
-                item.addEventListener('click', () => dropdownMenu.classList.remove('show'));
-            });
-        }
+
+   <script>
 
         // 蓝国国徽
         const undergroundEmblem = document.getElementById('undergroundEmblem');
@@ -168,13 +156,13 @@
 
         if (planBtn) {
             planBtn.addEventListener('click', () => {
-                showInfoPopup('images/plan.png');
+                showInfoPopup('plan.png');
             });
         }
 
         if (campBtn) {
             campBtn.addEventListener('click', () => {
-                showInfoPopup('images/camp.png');
+                showInfoPopup('camp.png');
             });
         }
 
