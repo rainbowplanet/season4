@@ -114,19 +114,14 @@ body::before {
 
 /* 标题图片样式 */
 .title-image {
-    max-width: 480px;
-    width: 75%;
+    max-width: 600px;
+    width: 80%;
     height: auto;
     display: block;
-    margin: 40px auto 5px;
+    margin: 20px auto 5px;
     filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
-    transition: transform 0.3s ease;
     position: relative;
     z-index: 2;
-}
-
-.title-image:hover {
-    transform: scale(1.02);
 }
 
 /* ===== 战场信息栏样式 ===== */
@@ -147,6 +142,12 @@ body::before {
     letter-spacing: 2px;
     font-weight: bold;
     text-shadow: none;
+}
+
+.battle-date {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
 }
 
 .battle-container {
@@ -374,42 +375,67 @@ body::before {
 /* ===== 战场弹窗样式（支持缩放和拖动） ===== */
 /* 战场弹窗内容容器 */
 .battle-popup-content {
-    width: 90vw;
+    width: 860px;          /* 固定宽度（800px图片 + 内边距空间） */
+    max-width: 90vw;       /* 小屏幕时自适应 */
     height: 85vh;
-    max-width: none;
-    max-height: none;
+    max-height: 85vh;
     padding: 0;
     background: transparent;
     overflow: hidden;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
-/* 图片查看器容器 */
+/* 图片查看器容器 - 改用纵向滚动 */
 .image-viewer {
     width: 100%;
-    height: 100%;
-    overflow: auto;
-    cursor: grab;
+    height: calc(100% - 10px);  /* 留出关闭按钮空间 */
+    overflow-y: auto;           /* 改为纵向滚动 */
+    overflow-x: auto;           /* 保留横向滚动以防万一 */
+    cursor: default;            /* 不再需要抓取光标 */
     background: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     position: relative;
+    scroll-behavior: smooth;
 }
 
-.image-viewer:active {
-    cursor: grabbing;
-}
-
-/* 可缩放的图片 */
+/* 可缩放的图片 - 固定宽度，高度自适应 */
 .viewer-image {
     display: block;
-    transform-origin: 0 0;
-    transition: transform 0.1s ease;
-    pointer-events: none;
-    max-width: none;
-    max-height: none;
+    width: 100%;
+    max-width: 800px;           /* 固定最大宽度800px */
+    height: auto;
+    margin: 0 auto;             /* 居中显示 */
+    pointer-events: none;       /* 允许点击穿透到滚动条 */
+    border-radius: 8px;
 }
 
-/* 自定义滚动条 */
+/* 图片外层包装器 - 控制滚动区域的滚动行为 */
+.image-viewer-wrapper {
+    display: flex;
+    justify-content: center;
+    min-height: 100%;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+/* 战场弹窗关闭按钮位置调整 */
+#battlePopup .popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+}
+
+#battlePopup .popup-close:hover {
+    background: #ff4444;
+    transform: scale(1.1);
+}
+
+/* 自定义滚动条样式 - 更美观 */
 .image-viewer::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -429,27 +455,7 @@ body::before {
     background: rgba(255, 255, 255, 0.8);
 }
 
-/* 战场弹窗关闭按钮位置调整 */
-#battlePopup .popup-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 100;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-}
-
-#battlePopup .popup-close:hover {
-    background: #ff4444;
-    transform: scale(1.1);
-}
-
-/* 战场弹窗 - 点击背景关闭 */
-#battlePopup {
-    cursor: default;
-}
-
-/* ===== 蓝国国徽按钮 ===== */
+/* ===== 蓝国国徽按钮（文字和图标分离，悬停只放大图标） ===== */
 .underground-emblem {
     position: absolute;
     bottom: 10px;
@@ -459,15 +465,16 @@ body::before {
     align-items: center;
     cursor: pointer;
     z-index: 100;
-    transition: all 0.3s ease;
     background: none;
     border: none;
     gap: 0px;
 }
 
+/* 图标容器 - 独立控制 */
 .emblem-icon {
     width: 150px;
     height: 150px;
+    transition: all 0.2s ease;
 }
 
 .emblem-icon img {
@@ -476,6 +483,7 @@ body::before {
     object-fit: contain;
 }
 
+/* 文字容器 - 独立且不参与动画 */
 .emblem-name {
     color: white;
     font-size: 12px;
@@ -484,10 +492,19 @@ body::before {
     text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     white-space: nowrap;
     pointer-events: none;
+    transition: none;
 }
 
-.underground-emblem:hover {
+/* 悬停效果 - 只作用于图标容器，文字不变 */
+.underground-emblem:hover .emblem-icon {
     transform: scale(1.05);
+    filter: drop-shadow(0 0 10px rgba(0, 160, 255, 0.8));
+}
+
+/* 悬停时文字保持不变 */
+.underground-emblem:hover .emblem-name {
+    transform: none;
+    filter: none;
 }
 
 /* ===== 响应式设计 ===== */

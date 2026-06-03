@@ -57,12 +57,12 @@
                 <!-- 8个国家的路径将通过JS添加 -->
             </svg>
             
-            <!-- 蓝国国徽按钮（右下角） -->
+            <!-- 蓝国国徽按钮（右下角）- 文字和图标已分离 -->
             <div class="underground-emblem" id="undergroundEmblem">
                 <div class="emblem-icon">
                     <img src="icons/blue.png" alt="蓝国">
                 </div>
-                <div class="emblem-name">*蓝国领土位于地表之下，点击国徽查看相关信息</div>
+                <div class="emblem-name">*蓝国领土位于魔界，点击国徽查看相关信息</div>
             </div>
         </div>
     </div>
@@ -76,12 +76,14 @@
         </div>
     </div>
 
-<!-- 战场图片弹窗（支持缩放和拖动） -->
+<!-- 战场图片弹窗（固定宽度800px，支持滚轮上下滚动阅览） -->
 <div class="image-popup" id="battlePopup">
     <div class="popup-content battle-popup-content">
         <button class="popup-close" id="battlePopupClose">×</button>
         <div class="image-viewer" id="imageViewer">
-            <img id="battlePopupImage" src="" alt="战场图片" class="viewer-image">
+            <div class="image-viewer-wrapper">
+                <img id="battlePopupImage" src="" alt="战场图片" class="viewer-image">
+            </div>
         </div>
     </div>
 </div>
