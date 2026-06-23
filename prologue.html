@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>序·别来无恙 - 七色国纪</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 序章页面专用样式 */
+        .prologue-page .battle-section {
+            margin-bottom: 30px;
+        }
+
+        .prologue-page .battle-container {
+            display: flex;
+            justify-content: center;
+        }
+
+    /* 序章页面专用背景 - 覆盖全局背景 */
+    .prologue-page::before {
+        background-image: url('yubg.png') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        background-attachment: fixed !important;
+    }
+
+        /* 活动剧情按钮 */
+        .prologue-page .activity-button {
+            padding: 20px 60px;
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #E0E0E0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+            border: 2px solid #E0E0E0;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            letter-spacing: 6px;
+            min-width: 300px;
+        }
+
+        .prologue-page .activity-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #BA4A73;
+            color: #E0E0E0;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .prologue-page .activity-button:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body class="prologue-page">
+
+    <!-- 右上角汉堡菜单 -->
+    <div class="menu-container">
+        <div class="menu-icon" id="menuIcon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="index.html" class="menu-item">世界观介绍</a>
+            <a href="prologue.html" class="menu-item">序·别来无恙</a>
+            <a href="chapter1.html" class="menu-item">第一章·时过境迁</a>
+            <a href="chapter2.html" class="menu-item">第二章·色争于野</a>
+            <a href="chapter3.html" class="menu-item">第三章·染尽诸彩</a>
+            <a href="last.html" class="menu-item">结局</a>
+        </div>
+    </div>
+
+    <!-- 标题 -->
+    <div class="title">
+        <img src="title.png" alt="七色国纪" class="title-image">
+    </div>
+
+    <!-- 信息栏 -->
+    <div class="battle-section">
+        <h2 class="battle-title">🐟️ 序章·愚鱼节 🐟️</h2>
+        <div class="battle-date">2026.4.12-2026.4.17</div>
+        <div class="battle-container">
+            <button class="activity-button" id="activityBtn">活动剧情</button>
+        </div>
+    </div>
+
+    <!-- 主要内容区 -->
+    <div class="main-content">
+        <div class="map-container">
+            <svg id="map" viewBox="0 0 2682 1688">
+                <!-- 8个国家的路径将通过JS添加 -->
+            </svg>
+
+            <div class="underground-emblem" id="undergroundEmblem">
+                <div class="emblem-icon">
+                    <img src="icons/blue.png" alt="蓝国">
+                </div>
+                <div class="emblem-name">*蓝国领土位于魔界，点击国徽查看相关信息</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 图片弹窗层（地图国家用） -->
+    <div class="image-popup" id="imagePopup">
+        <div class="popup-content">
+            <button class="popup-close" id="popupClose">×</button>
+            <img id="popupImage" src="" alt="国家图片">
+            <p id="popupCaption"></p>
+        </div>
+    </div>
+
+    <!-- 活动剧情图片弹窗 -->
+    <div class="image-popup" id="infoPopup">
+        <div class="popup-content info-popup-content">
+            <button class="popup-close" id="infoPopupClose">×</button>
+            <div class="info-image-viewer">
+                <img id="infoPopupImage" src="" alt="活动剧情">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // ==================== 页面初始化 ====================
+        window.onload = function() {
+            // 初始化地图
+            if (typeof initMap === 'function') {
+                initMap();
+            }
+
+            // 初始化弹窗事件
+            if (typeof initPopupEvents === 'function') {
+                initPopupEvents();
+            }
+
+            // 初始化汉堡菜单
+            initMenu();
+        };
+
+        // ==================== 汉堡菜单 ====================
+        function initMenu() {
+            var menuIcon = document.getElementById('menuIcon');
+            var dropdownMenu = document.getElementById('dropdownMenu');
+
+            if (menuIcon && dropdownMenu) {
+                menuIcon.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    dropdownMenu.classList.toggle('show');
+                });
+
+                document.addEventListener('click', function() {
+                    dropdownMenu.classList.remove('show');
+                });
+
+                document.querySelectorAll('.menu-item').forEach(function(item) {
+                    item.addEventListener('click', function() {
+                        dropdownMenu.classList.remove('show');
+                    });
+                });
+            }
+        }
+
+        // ==================== 蓝国国徽 ====================
+        var undergroundEmblem = document.getElementById('undergroundEmblem');
+        if (undergroundEmblem) {
+            undergroundEmblem.addEventListener('click', function() {
+                var popup = document.getElementById('imagePopup');
+                var popupImage = document.getElementById('popupImage');
+                var popupCaption = document.getElementById('popupCaption');
+                var title = document.querySelector('.title');
+                var battleSection = document.querySelector('.battle-section');
+                if (title) title.style.visibility = 'hidden';
+                if (battleSection) battleSection.style.visibility = 'hidden';
+                popupImage.src = 'images/blue.png';
+                popupCaption.textContent = '蓝国';
+                popup.classList.add('show');
+            });
+        }
+
+        // ==================== 图片弹窗关闭 ====================
+        var popup = document.getElementById('imagePopup');
+        var popupClose = document.getElementById('popupClose');
+
+        if (popupClose) {
+            popupClose.addEventListener('click', function() {
+                popup.classList.remove('show');
+                var title = document.querySelector('.title');
+                var battleSection = document.querySelector('.battle-section');
+                if (title) title.style.visibility = 'visible';
+                if (battleSection) battleSection.style.visibility = 'visible';
+            });
+        }
+
+        if (popup) {
+            popup.addEventListener('click', function(e) {
+                if (e.target === popup) {
+                    popup.classList.remove('show');
+                    var title = document.querySelector('.title');
+                    var battleSection = document.querySelector('.battle-section');
+                    if (title) title.style.visibility = 'visible';
+                    if (battleSection) battleSection.style.visibility = 'visible';
+                }
+            });
+        }
+
+        // ==================== 活动剧情按钮弹窗 ====================
+        var activityBtn = document.getElementById('activityBtn');
+        var infoPopup = document.getElementById('infoPopup');
+        var infoPopupImage = document.getElementById('infoPopupImage');
+        var infoPopupClose = document.getElementById('infoPopupClose');
+        var title = document.querySelector('.title');
+        var battleSection = document.querySelector('.battle-section');
+
+        function showInfoPopup(imgSrc) {
+            if (title) title.style.visibility = 'hidden';
+            if (battleSection) battleSection.style.visibility = 'hidden';
+            infoPopupImage.src = imgSrc;
+            infoPopup.classList.add('show');
+        }
+
+        function closeInfoPopup() {
+            infoPopup.classList.remove('show');
+            if (title) title.style.visibility = 'visible';
+            if (battleSection) battleSection.style.visibility = 'visible';
+        }
+
+        if (activityBtn) {
+            activityBtn.addEventListener('click', function() {
+                showInfoPopup('prologue-activity.png');
+            });
+        }
+
+        if (infoPopupClose) {
+            infoPopupClose.addEventListener('click', closeInfoPopup);
+        }
+
+        if (infoPopup) {
+            infoPopup.addEventListener('click', function(e) {
+                if (e.target === infoPopup) closeInfoPopup();
+            });
+        }
+
+        // ==================== ESC键关闭 ====================
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                if (infoPopup && infoPopup.classList.contains('show')) {
+                    closeInfoPopup();
+                }
+                if (popup && popup.classList.contains('show')) {
+                    popup.classList.remove('show');
+                    var titleEl = document.querySelector('.title');
+                    var battleSectionEl = document.querySelector('.battle-section');
+                    if (titleEl) titleEl.style.visibility = 'visible';
+                    if (battleSectionEl) battleSectionEl.style.visibility = 'visible';
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

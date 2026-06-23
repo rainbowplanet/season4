@@ -13,7 +13,6 @@ const countries = [
 // 蓝国数据
 const undergroundCountry = { id: 10, name: '蓝国', image: 'images/blue.png' };
 
-// ==================== 地图路径数据 ====================
 // 你的地图路径数据（8个国家的SVG路径，请替换为实际路径）
 const countryPaths = [
     "m 1231,1144.9685 c -10.0282,-1.0311 -12,-2.5954 -12,-9.5203 0,-4.7948 -0.983,-5.8347 -5.677,-6.0055 -2.9473,-0.1073 -6.7995,-3.3276 -9.5746,-8.0042 -1.1222,-1.8912 0.1623,-4.3278 3.0902,-5.8619 l 2.6015,-1.3631 -3.4701,-3.2574 c -5.3577,-5.0294 -10.2347,-6.8331 -16.8532,-6.233 -4.9472,0.4486 -6.3824,0.1224 -11.6822,-2.6557 -7.3974,-3.8776 -9.6475,-3.3369 -13.83,3.3232 -2.2789,3.6289 -3.7693,4.8566 -7,5.7659 -5.7182,1.6093 -10.8152,1.2863 -16.0182,-1.0153 -4.6476,-2.0558 -6.5088,-4.5995 -8.5181,-11.6412 -0.944,-3.3083 -2.6007,-5.1166 -9.5801,-10.4568 -12.5095,-9.5715 -13.3225,-12.5273 -5.9278,-21.5516 2.0848,-2.5443 3.7807,-5.8919 4.1308,-8.154 1.5142,-9.7833 7.433,-14.8844 14.4373,-12.4426 3.2008,1.1158 5.5106,0.4497 7.7349,-2.2304 2.2349,-2.6929 -6.0697,-15.3051 -13.0106,-19.759 -6.3017,-4.0438 -8.7883,-3.9726 -13.8941,0.3978 -5.8092,4.9724 -9.9172,5.4579 -19.168,2.2649 -4.0926,-1.4126 -7.9064,-2.5683 -8.4751,-2.5683 -0.5688,0 -3.01,1.571 -5.4249,3.4911 -5.7248,4.5518 -8.536,4.979 -19.8485,3.0162 -11.7753,-2.043 -15.1503,-3.446 -18.035,-7.4972 -4.9713,-6.9816 -3.0651,-13.919 6.9783,-25.39618 2.7465,-3.13859 5.456,-6.57041 6.0211,-7.62626 1.873,-3.49969 8.276,-4.37037 19.0005,-2.58369 16.3829,2.72935 17.21,2.51189 26.8767,-7.06659 4.4156,-4.37537 5.9625,-5.2661 10.1438,-5.84117 6.0917,-0.83782 12.4767,0.1208 16.5989,2.49212 4.2351,2.4362 8.2737,3.18194 11.8735,2.19246 5.9456,-1.63429 3.3085,-7.18079 -3.4141,-7.18079 -5.8214,0 -12.3553,-3.91339 -13.4768,-8.07171 -1.6452,-6.10056 -5.0199,-9.58746 -10.5667,-10.91811 -2.7606,-0.66226 -6.1045,-2.05776 -7.4309,-3.10112 -2.9503,-2.32073 -4.6008,-6.70559 -3.5715,-9.48821 0.8833,-2.3877 10.4379,-6.42085 15.2111,-6.42085 4.3577,0 13.8779,-3.17261 14.5169,-4.83779 0.8513,-2.21859 9.2263,-7.09539 11.0731,-6.44797 0.9124,0.31984 3.0797,1.6311 4.8163,2.9139 2.7724,2.048 3.565,2.19685 6.5,1.22077 5.1776,-1.72185 6.4226,-3.2806 5.0414,-6.31197 -0.8722,-1.91429 -1.9097,-2.53694 -4.227,-2.53694 -1.6891,0 -4.4611,-0.71881 -6.1601,-1.59736 -2.412,-1.24729 -3.6167,-1.35687 -5.4974,-0.5 -1.3246,0.60355 -4.7601,1.09736 -7.6343,1.09736 -5.1657,0 -22.8986,3.97626 -26.6237,5.96987 -2.9888,1.59954 -7.0186,1.2268 -11.8092,-1.09231 -3.3152,-1.60483 -5.0383,-3.35361 -7.0658,-7.17083 -3.658,-6.88721 -6.7594,-9.70673 -10.6773,-9.70673 -3.8634,0 -10.7959,4.73001 -12.9022,8.80312 -2.2886,4.42573 -3.4239,4.91101 -14.1988,6.06948 -9.2208,0.99137 -10.6961,0.90447 -17,-1.00134 -3.7967,-1.14781 -10.728,-2.42243 -15.403,-2.83249 -4.675,-0.41006 -9.4,-1.10359 -10.5,-1.54118 -3.5584,-1.41557 -6.5003,-4.78181 -6.4863,-7.4219 0.028,-5.36754 1.1909,-7.14601 6.3657,-9.7384 2.8163,-1.41091 5.7956,-3.1297 6.6206,-3.81954 0.8425,-0.70449 5.8831,-1.5367 11.5,-1.89867 8.4668,-0.54561 10.2683,-0.96609 11.75,-2.74253 3.435,-4.11827 1.5308,-8.67374 -5.6064,-13.41259 -5.2236,-3.46824 -5.5901,-3.56028 -9.5054,-2.38722 -7.8833,2.36189 -17.0918,-3.6383 -19.6253,-12.78772 -0.9876,-3.56657 -1.7322,-4.13216 -12.68366,-9.63384 l -11.63446,-5.84483 -9.09071,3.59483 C 968.10418,850.38233 963.03042,852 961.82904,852 c -1.20137,0 -6.04651,-1.96233 -10.76697,-4.36074 -7.04512,-3.57954 -9.02869,-4.19364 -11.07237,-3.42794 -3.82005,1.43125 -9.85181,-0.71844 -11.08001,-3.94886 -2.01613,-5.30282 1.94913,-9.73537 10.59031,-11.83832 2.99793,-0.72959 8.53753,-5.55655 17.16101,-14.95333 2.25383,-2.45594 2.99293,-2.66424 7.98453,-2.2503 4.1806,0.34669 6.50324,-0.0317 9.67763,-1.57639 5.62656,-2.73805 5.97831,-3.56008 3.12446,-7.30167 -2.78583,-3.6524 -3.07099,-6.91478 -1.03116,-11.79679 1.77272,-4.24271 4.30384,-5.83255 12.86183,-8.07874 6.42138,-1.6854 7.10035,-1.68955 12.8942,-0.0787 3.3637,0.9352 7.0511,2.35544 8.1942,3.15608 2.2257,1.55892 8.8157,1.78403 17.1876,0.5871 3.469,-0.49596 6.3153,-1.73595 9.0745,-3.95331 l 4.0202,-3.2307 6.9255,1.59297 c 3.809,0.87613 7.8949,2.22009 9.0797,2.98657 1.98,1.28097 2.6468,1.01632 8.25,-3.27457 7.1744,-5.49416 7.5359,-7.20878 2.8226,-13.38836 -3.9265,-5.14791 -7.6262,-6.24307 -16.0869,-4.76192 -8.3835,1.46762 -18.5144,-1.61802 -23.6081,-7.19048 -1.9748,-2.16031 -4.5112,-3.91158 -5.6654,-3.91158 -3.09,0 -15.0224,-5.66104 -15.7101,-7.45332 -0.3264,-0.85068 -0.3417,-2.20292 -0.034,-3.00498 0.6469,-1.68583 8.3002,-6.37231 12.2617,-7.50846 3.0366,-0.87088 13.0855,0.29851 20.6159,2.39906 2.75,0.7671 8.3045,2.15624 12.3433,3.08699 l 7.3432,1.69227 3.2044,-3.10578 c 2.9345,-2.84424 3.7477,-3.09986 9.6567,-3.03549 3.5488,0.0386 7.3524,0.42987 8.4524,0.86936 2.4973,0.99778 10.9419,-3.02831 12.5143,-5.96639 0.9347,-1.74647 0.5214,-2.53642 -2.9641,-5.66539 -5.4035,-4.85088 -5.4192,-8.40217 -0.05,-11.40817 1.9249,-1.0777 6.2957,-1.33446 19,-1.1161 14.1169,0.24265 17.1012,0.57437 20.6623,2.29678 7.2018,3.48323 12.9966,9.45043 16.9548,17.45935 3.1281,6.32927 3.5732,8.05496 3.0544,11.84055 -0.8954,6.53213 2.7919,10.87687 15.1764,17.88274 11.9946,6.78521 13.1197,7.2472 14.9058,6.12055 2.3864,-1.50529 5.7254,-6.23776 4.949,-7.01422 -0.3649,-0.36486 -3.0347,-1.46303 -5.933,-2.44039 -4.6802,-1.57821 -5.3047,-2.12034 -5.5825,-4.8458 -0.2599,-2.54945 0.1632,-3.27661 2.5,-4.29678 1.547,-0.67539 4.9636,-2.67805 7.5924,-4.45035 2.6288,-1.77229 6.7168,-3.51286 9.0845,-3.86793 5.3413,-0.80097 5.3734,-0.82412 9.9908,-7.2 l 3.7889,-5.2319 -3.4826,-1.66072 c -4.1908,-1.99845 -4.8221,-4.37135 -2.9216,-10.98136 2.3881,-8.30615 2.5433,-10.99566 0.8413,-14.58237 -2.6655,-5.61707 -6.5164,-7.1764 -18.059,-7.31249 -12.2022,-0.14387 -17.9864,-2.28825 -20.8496,-7.72956 -2.0218,-3.84241 -6.4567,-6.39178 -12.9158,-7.42463 -3.3248,-0.53165 -5.3723,-1.83048 -9.6859,-6.14407 -3.0085,-3.00845 -7.0162,-6.11599 -8.9061,-6.90565 -1.89,-0.78965 -5.8612,-3.2666 -8.8251,-5.50433 -5.3875,-4.06766 -9.3015,-5.39807 -19.0031,-6.45945 -3.6941,-0.40414 -6.1844,-1.40626 -8.75,-3.52105 -4.1395,-3.41211 -4.568,-6.29276 -1.5137,-10.17566 1.8134,-2.30542 2.7978,-2.63486 7.8729,-2.63486 3.7289,0 7.5052,-0.75418 10.5746,-2.11192 5.5307,-2.4465 11.2706,-2.13325 15.3834,0.83954 4.3466,3.14176 12.7461,6.27238 16.8289,6.27238 3.1703,0 4.5427,-0.69736 7.6652,-3.8951 2.0919,-2.14231 5.1123,-4.15688 6.7121,-4.47683 1.5997,-0.31995 4.1556,-1.50364 5.6796,-2.63041 1.524,-1.12677 5.1019,-2.41714 7.9508,-2.86749 6.526,-1.03163 7.8671,-2.16513 8.5455,-7.2226 0.2997,-2.23454 1.31,-4.90822 2.2451,-5.94152 2.0075,-2.2182 15.673,-6.9732 19.9727,-6.9496 4.5648,0.0251 10.7176,4.0046 13.0147,8.41762 1.1099,2.13238 3.1982,4.75819 4.6406,5.83512 2.3136,1.72736 3.0576,1.81452 6.3141,0.73978 3.2421,-1.07 3.6157,-1.52021 3.0689,-3.69867 -1.4419,-5.74508 3.1175,-9.09914 10.7196,-7.88576 5.6722,0.90535 8.4251,2.87122 9.2444,6.60154 0.4259,1.93899 1.5462,3.42336 3.0014,3.9766 2.7838,1.05842 3.876,3.97675 2.9929,7.99732 -0.912,4.15252 0.1753,6.78074 3.5212,8.51097 6.3419,3.27954 12.9745,0.8186 12.9844,-4.81767 0.016,-8.94894 4.8251,-15.17595 12.6514,-16.38019 5.5604,-0.85559 7.343,-2.0485 7.343,-4.91404 0,-1.3918 0.4482,-3.36795 0.9959,-4.39143 1.3692,-2.55842 10.5158,-5.80103 18.7033,-6.63061 3.7404,-0.37899 8.4603,-1.5497 10.4885,-2.60157 4.7759,-2.47682 6.8714,-1.39766 9.582,4.93463 2.7449,6.41241 3.6071,12.94697 2.7564,20.89054 -1.0397,9.70925 -2.4134,10.73991 -13.372,10.03278 -4.7598,-0.30714 -10.4541,-0.81384 -12.6541,-1.12601 -4.6589,-0.66108 -7.8915,0.75924 -10.8758,4.77863 -1.6893,2.27526 -1.8468,3.10027 -0.8591,4.5 5.0723,7.18826 4.9665,8.0821 -1.9265,16.27833 -2.1112,2.51039 -3.8386,5.51337 -3.8386,6.67327 0,1.15991 -1.1706,3.50009 -2.6013,5.20041 -1.4307,1.70033 -2.3617,3.71593 -2.0689,4.47912 0.2929,0.7632 3.151,2.39352 6.3514,3.62295 4.7872,1.83903 9.0986,2.40165 24.3188,3.17352 25.295,1.2828 24.1509,1.37537 30.6984,-2.48408 4.2642,-2.5136 5.7229,-3.92461 5.5048,-5.32469 -0.1633,-1.04767 -0.3883,-3.81725 -0.5,-6.15461 -0.1118,-2.33739 -0.705,-4.24986 -1.3183,-4.25 -0.6134,-1.4e-4 -2.3009,-0.93291 -3.75,-2.07283 -4.9738,-3.91233 -2.6489,-11.1394 3.9836,-12.38367 2.0171,-0.37841 6.0521,-2.03387 8.9668,-3.6788 4.5167,-2.54909 5.7911,-2.85502 8.629,-2.07144 3.6827,1.01684 6.6581,0.27012 8.6929,-2.18165 0.7357,-0.88652 2.2655,-1.61186 3.3995,-1.61186 1.134,0 3.9782,-0.92767 6.3203,-2.06149 4.4543,-2.15628 5.5462,-4.11204 6.9446,-12.43851 0.7837,-4.66622 3.4895,-9.49552 6.2738,-11.19737 1.0774,-0.65855 2.7397,-3.5481 3.694,-6.42123 2.9927,-9.01026 13.7804,-18.45716 20.2012,-17.69049 2.133,0.25468 3.081,1.45323 5.386,6.80909 3.18,7.38924 3.6209,13.6538 1.2796,18.18137 -3.078,5.95225 0.098,16.48889 5.8607,19.44124 1.7782,0.91105 3.4588,2.00183 3.7347,2.42395 0.2758,0.42213 2.0753,1.1753 3.9988,1.67373 2.7772,0.71966 4.9387,0.40404 10.4984,-1.53296 6.2731,-2.18552 7.6012,-2.32803 12.7707,-1.37032 3.1733,0.58789 9.533,2.89882 14.1326,5.13541 9.4956,4.61718 11.1331,6.92942 11.0487,15.60099 -0.038,3.93158 -0.6632,5.85849 -2.8152,8.67991 -2.5797,3.38211 -2.6437,3.68959 -0.9508,4.56285 3.9625,2.044 14.4924,5.20383 17.3414,5.20383 1.66,0 6.4957,1.74308 10.746,3.8735 4.2503,2.13043 10.1182,4.38167 13.0399,5.00276 6.4393,1.36888 11.7799,5.43302 16.8906,12.85355 3.445,5.00199 3.7477,6.01411 3.9379,13.1664 0.153,5.75655 0.775,8.83964 2.4201,11.99567 1.973,3.78533 2.0833,4.6841 1.0133,8.25545 -0.9321,3.11096 -1.9715,4.32974 -4.6458,5.44711 -3.8849,1.62322 -6.4994,1.20058 -13.9282,-2.25147 -6.4836,-3.01282 -7.2085,-2.94683 -8.016,0.72976 -0.6873,3.12941 -4.6734,6.36627 -9.3375,7.58239 -2.884,0.75198 -11.9351,-3.38319 -20.5623,-9.39433 -3.3463,-2.33157 -6.5342,-4.22578 -7.0842,-4.20936 -0.55,0.0164 -2.558,1.36156 -4.4622,2.98921 -3.8986,3.33237 -6.1959,3.62688 -11.3836,1.45936 -5.5153,-2.30447 -8.3829,-1.9447 -9.9631,1.25 -1.0881,2.19964 -1.1254,3.54972 -0.1866,6.746 1.5064,5.12842 5.0773,7.24376 15.2186,9.01507 10.2886,1.79703 10.678,1.98561 13.7793,6.67187 2.4687,3.73053 2.906,3.97449 5.8332,3.25455 8.2281,-2.02368 12.6898,-0.16777 17.9394,7.46218 2.4961,3.62804 3.2432,5.87436 3.5486,10.67048 0.3695,5.80367 0.2447,6.19462 -2.7951,8.75244 -2.2451,1.8891 -4.3161,2.67741 -7.0338,2.67741 -6.083,0 -8.249,3.15302 -5.8233,8.47692 1.6563,3.63504 5.216,4.23566 9.8079,1.65487 2.1897,-1.23068 5.5597,-2.13179 7.9726,-2.13179 4.2057,0 7.9214,-1.36081 9.2828,-3.3997 0.4041,-0.60517 0.7416,-2.75514 0.75,-4.77772 0.019,-4.63959 2.7125,-6.91289 10.917,-9.21495 l 6.0032,-1.68442 5.9754,3.01638 c 6.7715,3.41823 9.1339,6.15624 9.0879,10.53292 -0.053,5.04483 -5.083,9.52749 -10.6907,9.52749 -3.1464,0 -7.2775,2.81831 -7.2775,4.96482 0,2.0567 4.4694,3.23435 10.8967,2.87117 5.4105,-0.30572 7.4614,-0.94338 11.1188,-3.45707 2.4665,-1.69521 5.6095,-3.8389 6.9845,-4.76376 1.375,-0.92485 4.029,-2.79161 5.8979,-4.14836 1.8688,-1.35674 4.7938,-2.47369 6.5,-2.48211 4.3337,-0.0214 5.4386,-0.98153 6.8872,-5.98464 1.0184,-3.51772 1.845,-4.53423 4.24,-5.21415 5.0234,-1.42613 11.4529,0.0383 14.7813,3.36664 2.9592,2.95922 2.9768,3.04399 2.3816,11.47795 -0.6365,9.01925 -3.7162,17.58986 -7.9958,22.25162 -2.5631,2.792 -10.5266,6.52849 -16.0884,7.54869 -4.8455,0.88881 -8.2331,3.04381 -8.9212,5.67508 -0.41,1.56761 1.0042,3.26313 6.3942,7.66648 7.989,6.52667 10.8096,11.76606 8.9571,16.63853 -1.3894,3.65445 -0.2843,5.00256 5.7931,7.0666 5.4937,1.86584 7.4069,3.19757 9.0651,6.31028 2.5643,4.81377 -2.0958,10.06889 -10.0431,11.32518 -7.9359,1.2545 -8.9532,3.18273 -7.3281,13.88961 0.5584,3.67915 0.3447,4.80787 -1.1687,6.17209 -3.3418,3.01222 -6.6991,3.20209 -9.4065,0.53197 -4.7408,-4.67551 -6.1443,-4.88589 -11.0193,-1.6517 -5.4157,3.59282 -7.8916,3.68665 -11.744,0.44508 -2.9674,-2.49686 -5.7519,-3.1217 -7.7304,-1.73469 -0.5764,0.40408 -2.2321,2.78557 -3.6794,5.29221 -2.6237,4.54427 -9.0462,11.10999 -14.1192,14.43395 -3.7419,2.45179 -18.3998,1.64041 -24.1534,-1.337 -4.5523,-2.35572 -12.9583,-3.04991 -16.1631,-1.33478 -1.1865,0.63501 -3.4395,2.4368 -5.0067,4.00397 -1.5672,1.56718 -3.5201,3.11971 -4.3398,3.45006 -2.8201,1.1365 1.6323,3.37883 9.3202,4.69389 5.6335,0.96364 8.5893,0.98736 12.8486,0.10313 7.0516,-1.4639 12.5333,-0.30126 21.3003,4.51769 6.9117,3.79915 7.8453,5.25213 7.3321,11.41157 -0.2848,3.4189 -0.2105,3.49567 3.2084,3.31328 17.1653,-0.91577 19.5142,-0.79343 22.8944,1.19247 1.867,1.09684 3.7795,2.78175 4.25,3.74425 0.4706,0.9625 1.2166,2.49698 1.6578,3.40994 1.6917,3.5007 10.4287,7.22237 20.5109,8.73696 9.2378,1.38775 14.4566,3.46227 19.7104,7.83508 3.2622,2.7152 5.9765,7.16235 5.9765,9.79209 0,4.57505 -2.7374,6.57573 -11,8.03948 -4.6897,0.83079 -9.1691,2.38137 -11.9545,4.13806 -3.9489,2.49055 -5.3304,2.79661 -12.1719,2.69666 -4.2447,-0.062 -8.1966,0.18334 -8.7821,0.54521 -2.0675,1.27778 -8.2901,-1.37186 -12.6416,-5.38287 -2.4229,-2.23333 -5.3357,-4.06061 -6.473,-4.06061 -3.1369,0 -6.9769,4.39578 -6.9769,7.98666 0,4.55094 -2.4928,9.70374 -5.1587,10.66354 -3.487,1.2554 -21.8935,0.6037 -33.8413,-1.1982 -12.5586,-1.894 -19.4491,-3.9248 -23.5,-6.926 -5.1774,-3.8357 -15.5121,-6.17716 -21.9412,-4.97104 -3.1252,0.58627 -4.1309,1.48909 -6.6691,5.98641 -4.1043,7.27253 -4.9727,7.83793 -10.8418,7.05933 -4.8612,-0.6448 -4.979,-0.596 -7.4934,3.1042 -1.405,2.0677 -2.5545,4.2972 -2.5545,4.9547 0,1.8682 5.0067,5.3404 7.7006,5.3404 3.2106,0 5.7555,1.4221 11.902,6.6505 2.8064,2.3873 6.5577,4.6316 8.3362,4.9873 4.2434,0.8486 5.8244,4.1055 4.0603,8.3643 -2.1501,5.1908 -5.6108,6.2537 -17.8498,5.4819 -8.3273,-0.5251 -11.6305,-0.337 -15.1493,0.8627 -13.59,4.6333 -26.2683,4.5742 -33.8094,-0.1577 -2.5798,-1.6187 -6.3325,-3.1878 -8.3393,-3.4868 -2.0069,-0.299 -5.8319,-2.0754 -8.5,-3.9476 -3.7664,-2.6428 -4.92,-4.0953 -5.1583,-6.4947 -0.3508,-3.5308 -4.6466,-8.1882 -10.6679,-11.5657 -2.184,-1.2251 -5.2368,-4.1122 -6.7838,-6.4157 -1.7724,-2.639 -3.3371,-3.9871 -4.23,-3.6445 -1.1285,0.4331 -1.1772,0.9281 -0.2393,2.43 0.9098,1.4568 0.8991,2.1649 -0.047,3.111 -1.5611,1.5611 -1.5852,3.825 -0.041,3.825 0.6513,0 3.1147,0.9345 5.4742,2.0767 7.9028,3.8257 7.812,12.994 -0.1434,14.4864 -1.925,0.3612 -4.1255,0.4166 -4.89,0.1233 -2.5596,-0.9822 -9.0858,1.43 -13.1251,4.8513 -3.9909,3.3803 -3.9961,3.3944 -2.3134,6.1746 0.9276,1.5325 4.6319,4.5867 8.2317,6.7871 3.5997,2.2003 8.1282,5.4997 10.0633,7.3318 6.2109,5.8806 4.083,11.9556 -5.0427,14.3964 -3.2739,0.8756 -5.7558,2.5254 -8.8464,5.8805 -3.6765,3.9912 -5.0215,4.7632 -9.3308,5.3559 -5.2825,0.7265 -13.5405,-0.086 -16.5084,-1.6253 -0.9607,-0.498 -2.6537,-2.6833 -3.7622,-4.8561 -2.0658,-4.0494 -4.7092,-5.4443 -9.1259,-4.8155 -1.8472,0.263 -2.4678,1.134 -2.9548,4.1477 -0.7912,4.895 -3.544,8.5395 -8.3238,11.02 -3.7922,1.968 -3.8099,1.9678 -8.6454,-0.075 l -4.8454,-2.0472 -0.8596,2.5788 c -0.4727,1.4183 -0.5016,4.183 -0.064,6.1437 0.4375,1.9608 1.027,4.7653 1.31,6.2324 0.3133,1.624 1.8455,3.49 3.917,4.7702 4.3485,2.6876 4.9314,4.3357 3.091,8.7404 -0.8196,1.9614 -1.4901,6.2503 -1.4901,9.5307 0,5.9302 -0.033,5.9963 -5.64,11.471 -5.2558,5.1313 -5.886,5.4632 -9.25,4.8727 -5.6822,-0.9974 -7.1329,-0.9672 -15.11,0.314 -11.2561,1.808 -17.6118,2.0674 -27,1.1021 z",  // 红国
@@ -144,7 +143,6 @@ function addCountryIcons() {
         iconGroup.setAttribute('data-id', country.id);
         iconGroup.setAttribute('pointer-events', 'none');
         
-        
         const iconImage = document.createElementNS('http://www.w3.org/2000/svg', 'image');
         iconImage.setAttribute('href', `icons/${country.id}.png`);
         iconImage.setAttribute('x', centerX - 22);
@@ -227,18 +225,46 @@ function initPopupEvents() {
         if (e.key === 'Escape') {
             if (popup && popup.classList.contains('show')) closePopup();
             const battlePopup = document.getElementById('battlePopup');
-            if (battlePopup && battlePopup.classList.contains('show')) battlePopup.classList.remove('show');
+            if (battlePopup && battlePopup.classList.contains('show')) closeBattlePopup();
         }
     });
 }
 
-// ==================== 战场卡片弹窗（悬停高亮对应国家 + 蓝国国徽高亮） ====================
+// ==================== 战场卡片弹窗（支持多图滑动，自动识别章节） ====================
 function initBattleCards() {
     const battleCards = document.querySelectorAll('.battle-card');
     const battlePopup = document.getElementById('battlePopup');
     const battlePopupImage = document.getElementById('battlePopupImage');
     const battlePopupClose = document.getElementById('battlePopupClose');
     const imageViewer = document.querySelector('.image-viewer');
+    
+    // 存储当前弹窗的图片列表和索引
+    let currentImages = [];
+    let currentIndex = 0;
+    
+    // ===== 根据当前页面动态获取战场图片配置 =====
+    function getBattleImagesMap() {
+        const pageTitle = document.querySelector('.battle-title')?.textContent || '';
+        
+        // 判断当前是第几章
+        if (pageTitle.includes('第二章')) {
+            // ===== 第二章=====
+            return {
+                'battle1': ['images/battle1.png', 'js/p2-1.png'],    // 旧试验场
+                'battle2': ['imgaes/battle2.png', 'js/p2-2.png'],    // 双生山麓
+                'battle3': ['images/battle3.png', 'js/p2-3.png']     // 沉睡峡谷
+            };
+        } else {
+            // ===== 第一章=====
+            return {
+                'battle1': ['1-1.png', 'js/p1-1.png'],    // 常春港口
+                'battle2': ['1-2.png', 'js/p1-2.png'],    // 玫瑰旷原
+                'battle3': ['1-3.png', 'js/p1-3.png']     // 碎琉璃海
+            };
+        }
+    }
+    
+    const battleImagesMap = getBattleImagesMap();
     
     // 解析交战国家ID的工具函数
     function parseBattleCountries(countriesText) {
@@ -259,9 +285,8 @@ function initBattleCards() {
         return allCountryNames.map(name => countryNameToId[name]).filter(id => id !== undefined);
     }
     
-    // 高亮蓝国国徽图标（发光 + 放大）
+    // 高亮蓝国国徽图标
     function highlightUndergroundEmblem() {
-        // 每次调用时重新获取元素，确保元素存在
         const emblemIcon = document.querySelector('.underground-emblem .emblem-icon');
         if (emblemIcon && !emblemIcon.hasAttribute('data-highlight')) {
             emblemIcon.setAttribute('data-highlight', 'true');
@@ -271,7 +296,6 @@ function initBattleCards() {
         }
     }
     
-    // 恢复蓝国国徽图标
     function resetUndergroundEmblem() {
         const emblemIcon = document.querySelector('.underground-emblem .emblem-icon');
         if (emblemIcon && emblemIcon.hasAttribute('data-highlight')) {
@@ -281,14 +305,11 @@ function initBattleCards() {
         }
     }
     
-    // 高亮国家地块，同时提升国徽层级
     function highlightCountry(country) {
-        // 蓝国没有地块，单独处理国徽高亮
         if (country.id === 10) {
             highlightUndergroundEmblem();
             return;
         }
-        
         const countryPath = document.querySelector(`.country[data-id="${country.id}"]`);
         if (countryPath && currentlySelectedId !== country.id) {
             if (!countryPath.hasAttribute('data-original-fill')) {
@@ -297,21 +318,17 @@ function initBattleCards() {
             countryPath.setAttribute('fill', country.color);
             countryPath.parentNode.appendChild(countryPath);
         }
-        
         const iconGroup = document.querySelector(`.country-icon-group[data-id="${country.id}"]`);
         if (iconGroup) {
             iconGroup.parentNode.appendChild(iconGroup);
         }
     }
     
-    // 恢复国家地块
     function resetCountry(country) {
-        // 蓝国特殊处理
         if (country.id === 10) {
             resetUndergroundEmblem();
             return;
         }
-        
         const countryPath = document.querySelector(`.country[data-id="${country.id}"]`);
         if (countryPath && currentlySelectedId !== country.id) {
             const originalFill = countryPath.getAttribute('data-original-fill') || '#E8E8E8';
@@ -319,39 +336,163 @@ function initBattleCards() {
         }
     }
     
-// 打开弹窗
-function openBattlePopup(imgPath) {
-    if (!battlePopup || !battlePopupImage) return;
-    
-    battlePopupImage.src = imgPath;
-    
-    // 关键修改：让图片以原始尺寸显示，不缩放
-    battlePopupImage.style.width = 'auto';
-    battlePopupImage.style.height = 'auto';
-    battlePopupImage.style.maxWidth = 'none';
-    battlePopupImage.style.maxHeight = 'none';
-    
-    // 可选：设置一个最小宽度，确保图片足够大
-    battlePopupImage.style.minWidth = '800px';
-    
-    battlePopup.classList.add('show');
-    
-    if (imageViewer) {
-        imageViewer.scrollTop = 0;
-        imageViewer.scrollLeft = 0;
+    // ===== 创建滑动箭头 =====
+    function createSliderArrows() {
+        document.querySelectorAll('.slider-arrow').forEach(el => el.remove());
+        
+        const leftArrow = document.createElement('button');
+        leftArrow.className = 'slider-arrow';
+        leftArrow.innerHTML = '‹';
+        leftArrow.style.cssText = `
+            position: fixed;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            z-index: 10001;
+            background: rgba(0,0,0,0.7);
+            border: 2px solid rgba(255,255,255,0.5);
+            border-radius: 50%;
+            color: white;
+            font-size: 3rem;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-family: Arial, sans-serif;
+            line-height: 1;
+        `;
+        leftArrow.onmouseover = function() { this.style.background = 'rgba(255,255,255,0.3)'; };
+        leftArrow.onmouseout = function() { this.style.background = 'rgba(0,0,0,0.7)'; };
+        leftArrow.onclick = function(e) {
+            e.stopPropagation();
+            if (currentImages.length === 0) return;
+            currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+            battlePopupImage.src = currentImages[currentIndex];
+            updateImageCounter();
+        };
+        
+        const rightArrow = document.createElement('button');
+        rightArrow.className = 'slider-arrow';
+        rightArrow.innerHTML = '›';
+        rightArrow.style.cssText = `
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            z-index: 10001;
+            background: rgba(0,0,0,0.7);
+            border: 2px solid rgba(255,255,255,0.5);
+            border-radius: 50%;
+            color: white;
+            font-size: 3rem;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-family: Arial, sans-serif;
+            line-height: 1;
+        `;
+        rightArrow.onmouseover = function() { this.style.background = 'rgba(255,255,255,0.3)'; };
+        rightArrow.onmouseout = function() { this.style.background = 'rgba(0,0,0,0.7)'; };
+        rightArrow.onclick = function(e) {
+            e.stopPropagation();
+            if (currentImages.length === 0) return;
+            currentIndex = (currentIndex + 1) % currentImages.length;
+            battlePopupImage.src = currentImages[currentIndex];
+            updateImageCounter();
+        };
+        
+        document.body.appendChild(leftArrow);
+        document.body.appendChild(rightArrow);
     }
-}
     
-    // 关闭弹窗
+    // ===== 更新图片计数器 =====
+    function updateImageCounter() {
+        let counter = document.getElementById('imageCounter');
+        if (!counter) {
+            counter = document.createElement('div');
+            counter.id = 'imageCounter';
+            counter.style.cssText = `
+                text-align: center;
+                color: #fff;
+                font-size: 1rem;
+                padding: 10px 0;
+                background: rgba(0,0,0,0.5);
+                border-radius: 0 0 10px 10px;
+                margin-top: 5px;
+                position: absolute;
+                bottom: -40px;
+                left: 0;
+                right: 0;
+                width: 100%;
+            `;
+            const popupContent = battlePopup.querySelector('.popup-content');
+            if (popupContent) {
+                popupContent.style.position = 'relative';
+                popupContent.appendChild(counter);
+            }
+        }
+        counter.textContent = (currentIndex + 1) + ' / ' + currentImages.length;
+        counter.style.display = currentImages.length > 1 ? 'block' : 'none';
+    }
+    
+    // ===== 打开战场弹窗 =====
+    function openBattlePopup(cardId) {
+        const images = battleImagesMap[cardId] || [];
+        if (images.length === 0) return;
+        
+        currentImages = images;
+        currentIndex = 0;
+        
+        battlePopupImage.src = images[0];
+        battlePopupImage.style.width = 'auto';
+        battlePopupImage.style.height = 'auto';
+        battlePopupImage.style.maxWidth = 'none';
+        battlePopupImage.style.maxHeight = 'none';
+        battlePopupImage.style.minWidth = '800px';
+        
+        battlePopup.classList.add('show');
+        
+        if (images.length > 1) {
+            createSliderArrows();
+            updateImageCounter();
+        } else {
+            document.querySelectorAll('.slider-arrow').forEach(el => el.remove());
+            const counter = document.getElementById('imageCounter');
+            if (counter) counter.remove();
+        }
+        
+        if (imageViewer) {
+            imageViewer.scrollTop = 0;
+            imageViewer.scrollLeft = 0;
+        }
+    }
+    
+    // ===== 关闭战场弹窗 =====
     function closeBattlePopup() {
         if (battlePopup) battlePopup.classList.remove('show');
+        document.querySelectorAll('.slider-arrow').forEach(el => el.remove());
+        const counter = document.getElementById('imageCounter');
+        if (counter) counter.remove();
+        currentImages = [];
+        currentIndex = 0;
     }
     
-    // 为每个战场卡片绑定事件
+    // 暴露 closeBattlePopup 供全局使用
+    window.closeBattlePopup = closeBattlePopup;
+    
+    // ===== 为每个战场卡片绑定事件 =====
     battleCards.forEach(card => {
         const countriesText = card.querySelector('.battle-countries')?.textContent || '';
         const countryIds = parseBattleCountries(countriesText);
         const countriesData = countryIds.map(id => countries.find(c => c.id === id)).filter(c => c !== undefined);
+        const cardId = card.id;
         
         card.addEventListener('mouseenter', () => {
             countriesData.forEach(country => highlightCountry(country));
@@ -362,22 +503,38 @@ function openBattlePopup(imgPath) {
         });
         
         card.addEventListener('click', () => {
-            const imgPath = card.getAttribute('data-battle-img');
-            if (imgPath) openBattlePopup(imgPath);
+            openBattlePopup(cardId);
         });
     });
     
-    // 点击背景关闭
+    // ===== 弹窗关闭事件 =====
     if (battlePopup) {
         battlePopup.addEventListener('click', (e) => {
             if (e.target === battlePopup) closeBattlePopup();
         });
     }
     
-    // 关闭按钮
     if (battlePopupClose) {
         battlePopupClose.addEventListener('click', closeBattlePopup);
     }
+    
+    // 键盘左右键切换
+    document.addEventListener('keydown', (e) => {
+        if (!battlePopup || !battlePopup.classList.contains('show')) return;
+        if (currentImages.length <= 1) return;
+        
+        if (e.key === 'ArrowLeft') {
+            currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+            battlePopupImage.src = currentImages[currentIndex];
+            updateImageCounter();
+            e.preventDefault();
+        } else if (e.key === 'ArrowRight') {
+            currentIndex = (currentIndex + 1) % currentImages.length;
+            battlePopupImage.src = currentImages[currentIndex];
+            updateImageCounter();
+            e.preventDefault();
+        }
+    });
 }
 
 // ==================== 汉堡菜单 ====================
@@ -410,4 +567,111 @@ window.onload = function() {
     initBattleCards();
     initMenu();
     initUndergroundEmblem();
+    initExtraButtons();
 };
+
+// ==================== 第三章额外按钮功能 ====================
+// 突发剧情图片组
+var suddenImages = ['tz/t1.png', 'tz/t2.png', 'tz/t3.png'];
+var suddenIndex = 0;
+
+function initExtraButtons() {
+    var suddenBtn = document.getElementById('suddenBtn');
+    var rankBtn = document.getElementById('rankBtn');
+    var infoPopup = document.getElementById('infoPopup');
+    var infoPopupImage = document.getElementById('infoPopupImage');
+    var infoPopupClose = document.getElementById('infoPopupClose');
+    var title = document.querySelector('.title');
+    var battleSection = document.querySelector('.battle-section');
+
+    function updateCounter(total, current) {
+        var counter = document.getElementById('imageCounter');
+        if (!counter) {
+            var newCounter = document.createElement('div');
+            newCounter.id = 'imageCounter';
+            newCounter.style.cssText = 'text-align:center; color:#fff; font-size:1rem; padding:10px 0; background:rgba(0,0,0,0.5); border-radius:0 0 10px 10px; margin-top:5px;';
+            infoPopup.querySelector('.info-popup-content').appendChild(newCounter);
+            counter = newCounter;
+        }
+        counter.textContent = (current + 1) + ' / ' + total;
+    }
+
+    function closeInfoPopup() {
+        infoPopup.classList.remove('show');
+        if (title) title.style.visibility = 'visible';
+        if (battleSection) battleSection.style.visibility = 'visible';
+        var arrows = document.querySelectorAll('.slider-arrow');
+        arrows.forEach(function(el) { el.remove(); });
+        var counter = document.getElementById('imageCounter');
+        if (counter) counter.remove();
+    }
+
+    function showInfoPopupWithSlider(images, index) {
+        if (title) title.style.visibility = 'hidden';
+        if (battleSection) battleSection.style.visibility = 'hidden';
+        document.querySelectorAll('.slider-arrow').forEach(function(el) { el.remove(); });
+
+        var leftArrow = document.createElement('button');
+        leftArrow.className = 'slider-arrow';
+        leftArrow.textContent = '‹';
+        leftArrow.style.cssText = 'position:fixed; top:50%; left:20px; transform:translateY(-50%); z-index:10001; background:rgba(0,0,0,0.7); border:2px solid rgba(255,255,255,0.5); border-radius:50%; color:white; font-size:3rem; width:60px; height:60px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.3s ease;';
+        leftArrow.onmouseover = function() { this.style.background = 'rgba(255,255,255,0.3)'; };
+        leftArrow.onmouseout = function() { this.style.background = 'rgba(0,0,0,0.7)'; };
+        leftArrow.onclick = function(e) {
+            e.stopPropagation();
+            suddenIndex = (suddenIndex - 1 + images.length) % images.length;
+            infoPopupImage.src = images[suddenIndex];
+            updateCounter(images.length, suddenIndex);
+        };
+
+        var rightArrow = document.createElement('button');
+        rightArrow.className = 'slider-arrow';
+        rightArrow.textContent = '›';
+        rightArrow.style.cssText = 'position:fixed; top:50%; right:20px; transform:translateY(-50%); z-index:10001; background:rgba(0,0,0,0.7); border:2px solid rgba(255,255,255,0.5); border-radius:50%; color:white; font-size:3rem; width:60px; height:60px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.3s ease;';
+        rightArrow.onmouseover = function() { this.style.background = 'rgba(255,255,255,0.3)'; };
+        rightArrow.onmouseout = function() { this.style.background = 'rgba(0,0,0,0.7)'; };
+        rightArrow.onclick = function(e) {
+            e.stopPropagation();
+            suddenIndex = (suddenIndex + 1) % images.length;
+            infoPopupImage.src = images[suddenIndex];
+            updateCounter(images.length, suddenIndex);
+        };
+
+        document.body.appendChild(leftArrow);
+        document.body.appendChild(rightArrow);
+
+        infoPopupImage.src = images[index];
+        infoPopup.classList.add('show');
+        updateCounter(images.length, index);
+    }
+
+    function showInfoPopupSingle(imgSrc) {
+        if (title) title.style.visibility = 'hidden';
+        if (battleSection) battleSection.style.visibility = 'hidden';
+        infoPopupImage.src = imgSrc;
+        infoPopup.classList.add('show');
+    }
+
+    if (suddenBtn) {
+        suddenBtn.addEventListener('click', function() {
+            suddenIndex = 0;
+            showInfoPopupWithSlider(suddenImages, 0);
+        });
+    }
+    if (rankBtn) {
+        rankBtn.addEventListener('click', function() {
+            suddenImages = ['images2/hr1.png', 'images2/hr2.png'];
+            suddenIndex = 0;
+            showInfoPopupWithSlider(suddenImages, 0);
+        });
+    }
+
+    if (infoPopupClose) {
+        infoPopupClose.addEventListener('click', closeInfoPopup);
+    }
+    if (infoPopup) {
+        infoPopup.addEventListener('click', function(e) {
+            if (e.target === infoPopup) closeInfoPopup();
+        });
+    }
+}

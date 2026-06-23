@@ -49,6 +49,15 @@
         </div>
     </div>
 
+    <!-- 红黑斜纹警戒线 -->
+    <div class="hazard-line"></div>
+
+    <!-- 额外按钮区域 -->
+    <div class="extra-button-section">
+        <button class="extra-button" id="suddenBtn" style="color: #C40000;">突发剧情</button>
+        <button class="extra-button" id="rankBtn">贡献度排行</button>
+    </div>
+
     <!-- 主要内容区 -->
     <div class="main-content">
         <!-- 地图容器 -->
@@ -76,17 +85,27 @@
         </div>
     </div>
 
-<!-- 战场图片弹窗（固定宽度800px，支持滚轮上下滚动阅览） -->
-<div class="image-popup" id="battlePopup">
-    <div class="popup-content battle-popup-content">
-        <button class="popup-close" id="battlePopupClose">×</button>
-        <div class="image-viewer" id="imageViewer">
-            <div class="image-viewer-wrapper">
-                <img id="battlePopupImage" src="" alt="战场图片" class="viewer-image">
+    <!-- 战场图片弹窗 -->
+    <div class="image-popup" id="battlePopup">
+        <div class="popup-content battle-popup-content">
+            <button class="popup-close" id="battlePopupClose">×</button>
+            <div class="image-viewer" id="imageViewer">
+                <div class="image-viewer-wrapper">
+                    <img id="battlePopupImage" src="" alt="战场图片" class="viewer-image">
+                </div>
             </div>
         </div>
     </div>
-</div>
+
+    <!-- 额外按钮专用弹窗 -->
+    <div class="image-popup" id="infoPopup">
+        <div class="popup-content info-popup-content">
+            <button class="popup-close" id="infoPopupClose">×</button>
+            <div class="info-image-viewer">
+                <img id="infoPopupImage" src="" alt="图片">
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
