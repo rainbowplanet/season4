@@ -243,26 +243,33 @@ function initBattleCards() {
     let currentIndex = 0;
     
     // ===== 根据当前页面动态获取战场图片配置 =====
-    function getBattleImagesMap() {
-        const pageTitle = document.querySelector('.battle-title')?.textContent || '';
-        
-        // 判断当前是第几章
-        if (pageTitle.includes('第二章')) {
-            // ===== 第二章=====
-            return {
-                'battle1': ['images/battle1.png', 'js/p2-1.png'],    // 旧试验场
-                'battle2': ['imgaes/battle2.png', 'js/p2-2.png'],    // 双生山麓
-                'battle3': ['images/battle3.png', 'js/p2-3.png']     // 沉睡峡谷
-            };
-        } else {
-            // ===== 第一章=====
-            return {
-                'battle1': ['1-1.png', 'js/p1-1.png'],    // 常春港口
-                'battle2': ['1-2.png', 'js/p1-2.png'],    // 玫瑰旷原
-                'battle3': ['1-3.png', 'js/p1-3.png']     // 碎琉璃海
-            };
-        }
+function getBattleImagesMap() {
+    const pageTitle = document.querySelector('.battle-title')?.textContent || '';
+    
+    // 判断当前是第几章
+    if (pageTitle.includes('第二章')) {
+        // ===== 第二章 =====
+        return {
+            'battle1': ['images/battle1.png', 'js/p2-1.png'],    // 旧试验场
+            'battle2': ['images/battle2.png', 'js/p2-2.png'],    // 双生山麓
+            'battle3': ['images/battle3.png', 'js/p2-3.png']     // 沉睡峡谷
+        };
+    } else if (pageTitle.includes('第三章')) {
+        // ===== 第三章 =====
+        return {
+            'battle1': ['3-1.png'],    // 第三个战场
+            'battle2': ['3-2.png'],    // 第四个战场（根据实际修改）
+            'battle3': ['3-3.png']     // 第五个战场（根据实际修改）
+        };
+    } else {
+        // ===== 第一章（默认） =====
+        return {
+            'battle1': ['1-1.png', 'js/p1-1.png'],    // 常春港口
+            'battle2': ['1-2.png', 'js/p1-2.png'],    // 玫瑰旷原
+            'battle3': ['1-3.png', 'js/p1-3.png']     // 碎琉璃海
+        };
     }
+}
     
     const battleImagesMap = getBattleImagesMap();
     
