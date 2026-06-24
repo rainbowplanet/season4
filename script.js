@@ -238,61 +238,50 @@ function initBattleCards() {
     const battlePopupClose = document.getElementById('battlePopupClose');
     const imageViewer = document.querySelector('.image-viewer');
     
-    // 存储当前弹窗的图片列表和索引
     let currentImages = [];
     let currentIndex = 0;
     
     // ===== 根据当前页面动态获取战场图片配置 =====
-function getBattleImagesMap() {
-    const pageTitle = document.querySelector('.battle-title')?.textContent || '';
-    
-    // 判断当前是第几章
-    if (pageTitle.includes('第二章')) {
-        // ===== 第二章 =====
-        return {
-            'battle1': ['images/battle1.png', 'js/p2-1.png'],    // 旧试验场
-            'battle2': ['images/battle2.png', 'js/p2-2.png'],    // 双生山麓
-            'battle3': ['images/battle3.png', 'js/p2-3.png']     // 沉睡峡谷
-        };
-    } else if (pageTitle.includes('第三章')) {
-        // ===== 第三章 =====
-        return {
-            'battle1': ['3-1.png'],    // 第三个战场
-            'battle2': ['3-2.png'],    // 第四个战场（根据实际修改）
-            'battle3': ['3-3.png']     // 第五个战场（根据实际修改）
-        };
-    } else {
-        // ===== 第一章（默认） =====
-        return {
-            'battle1': ['1-1.png', 'js/p1-1.png'],    // 常春港口
-            'battle2': ['1-2.png', 'js/p1-2.png'],    // 玫瑰旷原
-            'battle3': ['1-3.png', 'js/p1-3.png']     // 碎琉璃海
-        };
+    function getBattleImagesMap() {
+        const pageTitle = document.querySelector('.battle-title')?.textContent || '';
+        
+        if (pageTitle.includes('第二章')) {
+            return {
+                'battle1': ['images/battle1.png', 'js/p2-1.png'],
+                'battle2': ['images/battle2.png', 'js/p2-2.png'],
+                'battle3': ['images/battle3.png', 'js/p2-3.png']
+            };
+        } else if (pageTitle.includes('第三章')) {
+            return {
+                'battle1': ['3-1.png'],
+                'battle2': ['3-2.png'],
+                'battle3': ['3-3.png']
+            };
+        } else {
+            return {
+                'battle1': ['1-1.png', 'js/p1-1.png'],
+                'battle2': ['1-2.png', 'js/p1-2.png'],
+                'battle3': ['1-3.png', 'js/p1-3.png']
+            };
+        }
     }
-}
     
     const battleImagesMap = getBattleImagesMap();
     
-    // 解析交战国家ID的工具函数
     function parseBattleCountries(countriesText) {
         const parts = countriesText.split('VS');
         const leftPart = parts[0] || '';
         const rightPart = parts[1] || '';
-        
         const leftCountries = leftPart.trim().split(/\s+/);
         const rightCountries = rightPart.trim().split(/\s+/);
-        
         const allCountryNames = [...leftCountries, ...rightCountries];
-        
         const countryNameToId = {
             '红国': 1, '橙国': 2, '黄国': 3, '绿国': 4,
             '青国': 5, '紫国': 6, '黑国': 7, '白国': 8, '蓝国': 10
         };
-        
         return allCountryNames.map(name => countryNameToId[name]).filter(id => id !== undefined);
     }
     
-    // 高亮蓝国国徽图标
     function highlightUndergroundEmblem() {
         const emblemIcon = document.querySelector('.underground-emblem .emblem-icon');
         if (emblemIcon && !emblemIcon.hasAttribute('data-highlight')) {
@@ -343,7 +332,6 @@ function getBattleImagesMap() {
         }
     }
     
-    // ===== 创建滑动箭头 =====
     function createSliderArrows() {
         document.querySelectorAll('.slider-arrow').forEach(el => el.remove());
         
@@ -419,37 +407,31 @@ function getBattleImagesMap() {
         document.body.appendChild(rightArrow);
     }
     
-    // ===== 更新图片计数器 =====
+    // ===== 更新图片计数器（正常文档流，类似后日谈样式） =====
     function updateImageCounter() {
-        let counter = document.getElementById('imageCounter');
+        let counter = document.getElementById('battleImageCounter');
         if (!counter) {
             counter = document.createElement('div');
-            counter.id = 'imageCounter';
+            counter.id = 'battleImageCounter';
             counter.style.cssText = `
                 text-align: center;
                 color: #fff;
                 font-size: 1rem;
                 padding: 10px 0;
-                background: rgba(0,0,0,0.5);
+                background: rgba(0, 0, 0, 0.6);
                 border-radius: 0 0 10px 10px;
-                margin-top: 5px;
-                position: absolute;
-                bottom: -40px;
-                left: 0;
-                right: 0;
                 width: 100%;
+                flex-shrink: 0;
             `;
-            const popupContent = battlePopup.querySelector('.popup-content');
-            if (popupContent) {
-                popupContent.style.position = 'relative';
-                popupContent.appendChild(counter);
+            const viewer = document.querySelector('.image-viewer');
+            if (viewer && viewer.parentNode) {
+                viewer.parentNode.insertBefore(counter, viewer.nextSibling);
             }
         }
         counter.textContent = (currentIndex + 1) + ' / ' + currentImages.length;
         counter.style.display = currentImages.length > 1 ? 'block' : 'none';
     }
     
-    // ===== 打开战场弹窗 =====
     function openBattlePopup(cardId) {
         const images = battleImagesMap[cardId] || [];
         if (images.length === 0) return;
@@ -471,7 +453,7 @@ function getBattleImagesMap() {
             updateImageCounter();
         } else {
             document.querySelectorAll('.slider-arrow').forEach(el => el.remove());
-            const counter = document.getElementById('imageCounter');
+            const counter = document.getElementById('battleImageCounter');
             if (counter) counter.remove();
         }
         
@@ -481,20 +463,17 @@ function getBattleImagesMap() {
         }
     }
     
-    // ===== 关闭战场弹窗 =====
     function closeBattlePopup() {
         if (battlePopup) battlePopup.classList.remove('show');
         document.querySelectorAll('.slider-arrow').forEach(el => el.remove());
-        const counter = document.getElementById('imageCounter');
+        const counter = document.getElementById('battleImageCounter');
         if (counter) counter.remove();
         currentImages = [];
         currentIndex = 0;
     }
     
-    // 暴露 closeBattlePopup 供全局使用
     window.closeBattlePopup = closeBattlePopup;
     
-    // ===== 为每个战场卡片绑定事件 =====
     battleCards.forEach(card => {
         const countriesText = card.querySelector('.battle-countries')?.textContent || '';
         const countryIds = parseBattleCountries(countriesText);
@@ -514,7 +493,6 @@ function getBattleImagesMap() {
         });
     });
     
-    // ===== 弹窗关闭事件 =====
     if (battlePopup) {
         battlePopup.addEventListener('click', (e) => {
             if (e.target === battlePopup) closeBattlePopup();
@@ -525,7 +503,6 @@ function getBattleImagesMap() {
         battlePopupClose.addEventListener('click', closeBattlePopup);
     }
     
-    // 键盘左右键切换
     document.addEventListener('keydown', (e) => {
         if (!battlePopup || !battlePopup.classList.contains('show')) return;
         if (currentImages.length <= 1) return;
@@ -548,6 +525,13 @@ function getBattleImagesMap() {
 function initMenu() {
     const menuIcon = document.getElementById('menuIcon');
     const dropdownMenu = document.getElementById('dropdownMenu');
+    
+    // ===== 自动将菜单中的"结局"替换为"后日谈" =====
+    document.querySelectorAll('.menu-item').forEach(function(item) {
+        if (item.textContent.trim() === '结局') {
+            item.textContent = '后日谈';
+        }
+    });
     
     if (menuIcon && dropdownMenu) {
         menuIcon.addEventListener('click', (e) => {
@@ -578,7 +562,6 @@ window.onload = function() {
 };
 
 // ==================== 第三章额外按钮功能 ====================
-// 突发剧情图片组
 var suddenImages = ['tz/t1.png', 'tz/t2.png', 'tz/t3.png'];
 var suddenIndex = 0;
 
